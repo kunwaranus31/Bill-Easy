@@ -34,7 +34,8 @@ const Home = () => {
         <FlexBox
           sx={{
             display: "block",
-            pb: "320px"
+            pb: "320px",
+            pt:15
 
           }}
         >
@@ -320,7 +321,7 @@ const Home = () => {
             variant="contained"
             sx={{
               background: "#fff",
-              color:"primary.main"
+              color: "primary.main"
             }}
             endIcon={
               <Box
@@ -366,7 +367,40 @@ const Home = () => {
           </Box>
         </FlexBox>
       </FlexBox>
-      
+      <Box>
+        <Box
+          sx={{
+            textAlign: "center"
+          }}
+        >
+          <Typography
+            variant='h3'
+            color="primary.main"
+            sx={{
+              background: "#F2F9FF",
+              borderRadius: 9,
+              width: "280px",
+              p: "10px 10px",
+              placeSelf: "center"
+            }} >
+            The Bill Easy Difference:
+          </Typography>
+          <Typography variant='h2'sx={{
+            py:2
+          }} >
+            A Flow that Matches the <Box component="span" color="primary.main" >Jobsite</Box>
+          </Typography>
+          <Typography
+            variant='h5'
+            sx={{
+              width: "840px",
+              placeSelf: "center"
+            }} >
+            Construction projects move through predictable stages. BillEasy mirrors that flow. The result is less double-entry, fewer mistakes, and clearer accountability across teams. Here is how the workflow keeps your business tight.
+
+          </Typography>
+        </Box>
+      </Box>
 
     </Box>
   )
