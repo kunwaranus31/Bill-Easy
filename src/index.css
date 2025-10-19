@@ -39,9 +39,9 @@
 }
 @font-face {
   font-family: 'ClashGrotesk-Bold';
-  src: url('../fonts/ClashGrotesk-Bold.woff2') format('woff2'),
-       url('../fonts/ClashGrotesk-Bold.woff') format('woff'),
-       url('../fonts/ClashGrotesk-Bold.ttf') format('truetype');
+  src: url('./assets/fonts/ClashGrotesk-Bold.woff2') format('woff2'),
+       url('./assets/fonts/ClashGrotesk-Bold.woff') format('woff'),
+       url('./assets/fonts/ClashGrotesk-Bold.ttf') format('truetype');
   font-weight: 700;
   font-display: swap;
   font-style: normal;
@@ -50,14 +50,32 @@
 
 @font-face {
   font-family: 'Satoshi';
-  src: url('../fonts/Satoshi-Light.otf') format('otf'),
-       url('../fonts/Satoshi-Light.otf') format('truetype');
-  font-weight: 400;
-  font-display: swap;
-  font-style: normal;
+  src: url('./assets/fonts/Satoshi-Medium.woff2') format('woff2'),
+       url('./assets/fonts/Satoshi-Medium.woff') format('woff'),
+       url('./assets/fonts/Satoshi-Medium.ttf') format('truetype');
+       font-weight: 500;
+       font-display: swap;
+       font-style: normal;
 }
 
-
+@font-face {
+  font-family: 'Satoshi-Light';
+  src: url('./assets/fonts/Satoshi-Light.woff2') format('woff2'),
+       url('./assets/fonts/Satoshi-Light.woff') format('woff'),
+       url('./assets/fonts/Satoshi-Light.ttf') format('truetype');
+       font-weight: 400;
+       font-display: swap;
+       font-style: normal;
+}
+@font-face {
+  font-family: 'Satoshi-Regular';
+  src: url('./assets/fonts/Satoshi-Regular.woff2') format('woff2'),
+       url('./assets/fonts/Satoshi-Regular.woff') format('woff'),
+       url('./assets/fonts/Satoshi-Regular.ttf') format('truetype');
+       font-weight: 400;
+       font-display: swap;
+       font-style: normal;
+}
 
 /**
 * This is a variable font

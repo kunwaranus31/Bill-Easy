@@ -16,3 +16,4 @@ export { default as benifitImg3 } from './benifitImg3.png';
 export { default as benifitImg4 } from './benifitImg4.png';
 export { default as benifitImg5 } from './benifitImg5.png';
 export { default as blueBg } from './blueBg.png';
+export { default as logo } from './logo.png';

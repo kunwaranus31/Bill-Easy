@@ -1,6 +1,6 @@
-import { Box, Typography } from '@mui/material'
+import { Box  } from '@mui/material'
 import React from 'react'
-import FlexBox from './FlexBox'
+import { FlexBox, ResponsiveTypography  } from '../component'
 
 const HeadingIconText = ({items,containerWidth }) => {
     return (
@@ -9,6 +9,7 @@ const HeadingIconText = ({items,containerWidth }) => {
 
                 justifyContent: "space-between",
                 gap: 4,
+                px:0
             }} >
             {
                 items.map((item, index) => (
@@ -17,7 +18,7 @@ const HeadingIconText = ({items,containerWidth }) => {
                             background: "#F2F9FF",
                             borderRadius: 4,
                             p: 2,
-                            width : item.containerWidth
+                            width : {xs: "100%", lg:item.containerWidth}
                         }}>
                             <Box 
                             sx={{
@@ -26,26 +27,26 @@ const HeadingIconText = ({items,containerWidth }) => {
                                 justifyContent:"space-between",
                                 pb:2
                             }} >
-                                <Typography variant='h3' color='primary.main'
+                                <ResponsiveTypography  variant='h3' color='primary.main'
                                 sx={{
                                     width:item.headingWidth
                                 }}
                                 >
                                     {item.heading}
-                                </Typography>
+                                </ResponsiveTypography >
                                 <Box 
                                 component="img"
                                 src={item.image}
                                 />
                             </Box>
-                            <Typography variant='body' 
+                            <ResponsiveTypography  variant='body' 
                             sx={{
                                 display:"block",
                                 width:item.textWidth
                             }}
                             >
                                 {item.text}
-                            </Typography>
+                            </ResponsiveTypography >
                     </Box>
                 ))
             }

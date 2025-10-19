@@ -1,7 +1,7 @@
-import { Box, Button, Typography } from '@mui/material'
+import { Box, Button  } from '@mui/material'
 import React from 'react'
 import { bannerLaptop, bannerLogo1, bannerLogo2, bannerLogo3, bannerLogo4, bannerLogo5, bannerLogo6, bannerLogo7, benifitImg1, benifitImg2, benifitImg3, benifitImg4, benifitImg5, blueBg, controlIcon1, controlIcon2, controlIcon3, homeBanner } from '../assets'
-import { BoxBg, FlexBox } from '../component'
+import { BoxBg, FlexBox, ResponsiveTypography  } from '../component'
 import EastIcon from '@mui/icons-material/East';
 import PlayCircleIcon from '@mui/icons-material/PlayCircle';
 import IconText from '../component/IconText';
@@ -44,23 +44,25 @@ const Home = () => {
               textAlign: "center"
             }}
           >
-            <Typography
+            <ResponsiveTypography 
               variant='h1'
               width="1100px"
-              margin="0 auto"
+              sx={{
+                mx:"auto"
+              }}
             >
               Canada’s <Box component="span" color="primary.main" >Construction</Box> Project Management <Box component="span" color="primary.main" >Software</Box> for Builders Who Want Control
-            </Typography>
-            <Typography
+            </ResponsiveTypography >
+            <ResponsiveTypography 
               variant='h5'
               width="600px"
-              margin="0 auto"
               sx={{
-                pt: 2
+                pt: 2,
+                mx:"auto",
               }}
             >
               Track budgets, manage crews, and stay audit-ready across every project. BillEasy gives you clarity from day one to close-out.
-            </Typography>
+            </ResponsiveTypography >
           </Box>
           <FlexBox sx={{
             justifyContent: "center",
@@ -95,11 +97,13 @@ const Home = () => {
             </Button>
             <Box>
               <Box>
-                <Typography
+                <ResponsiveTypography 
+                variant='h5'
                   sx={{
                     display: "flex",
                     gap: 2,
-                    alignItems: "center"
+                    alignItems: "center",
+                    
                   }}
                 >
                   <PlayCircleIcon
@@ -110,7 +114,7 @@ const Home = () => {
                   // }} 
                   />
                   Watch How It Works
-                </Typography>
+                </ResponsiveTypography >
               </Box>
             </Box>
           </FlexBox>
@@ -118,9 +122,9 @@ const Home = () => {
           <Box sx={{
             textAlign: "center"
           }} >
-            <Typography variant='h3'>
+            <ResponsiveTypography  variant='h3'>
               Trusted By <Box component="span" color="primary.main" >Over 100+</Box> Construction Organization
-            </Typography>
+            </ResponsiveTypography >
 
             <FlexBox
               sx={{
@@ -141,7 +145,7 @@ const Home = () => {
           <Box component="img"
             sx={{
               display: "flex",
-              width: "1000px",
+              width: {xs:"100%" ,lg:"1000px"},
               justifySelf: "center",
               zIndex: 1,
               position: "absolute"
@@ -160,20 +164,20 @@ const Home = () => {
           placeItems: "center"
         }}
       >
-        <Typography
+        <ResponsiveTypography 
           variant='h2'
           width="730px"
         >
           Take control of <Box component="span" color="primary.main" >your projects</Box> and get <Box component="span" color="primary.main" >paid on time</Box>-every single time!
-        </Typography>
-        <Typography
+        </ResponsiveTypography >
+        <ResponsiveTypography 
           sx={{
             py: 3,
             width: "1250px"
           }}
         >
           Every builder knows the dread of month-end: missing receipts, late invoices, and a stack of paperwork that eats evenings. That’s exactly why we built BillEasy. It’s Canada’s construction financial and project management software built for contractors. BillEasy also works as a construction organization software that helps streamline projects from estimates to reports.
-        </Typography>
+        </ResponsiveTypography >
         <Button
           variant="contained"
           sx={{
@@ -199,10 +203,10 @@ const Home = () => {
               />
             </Box>
           }>
-          <Typography variant='h5' >
+          <ResponsiveTypography  variant='h5' >
 
             Request beta access
-          </Typography>
+          </ResponsiveTypography >
         </Button>
         <IconText
           items={[
@@ -222,29 +226,29 @@ const Home = () => {
             alignItems: "flex-start"
           }} >
           <Box>
-            <Typography variant='h2'
+            <ResponsiveTypography  variant='h2'
               width="600px"
             >
               Why <Box component="span" color="primary.main" >Canadian Builders</Box> and Contractors Choose <Box component="span" color="primary.main" >BillEasy</Box>
-            </Typography>
-            <Typography variant='h3'
+            </ResponsiveTypography >
+            <ResponsiveTypography  variant='h3'
               width="460px"
               sx={{
                 pt: 1
               }}
             >
               BillEasy was founded by builders, for builders, to solve this exact problem.
-            </Typography>
+            </ResponsiveTypography >
           </Box>
           <Box>
-            <Typography variant='body'
+            <ResponsiveTypography  variant='body'
               sx={{
                 display: "block",
                 width: "545px"
               }}
             >
               Canadian construction isn’t like anywhere else. Between provincial lien acts, complex holdback regulations, HST reporting, and the sheer pace of project work, your bottom line is constantly under pressure. You became a builder to build, but too often your nights are lost to financial chaos across disconnected apps and endless paper trails.
-            </Typography>
+            </ResponsiveTypography >
             <GradientButton buttonText="Read More" btnlink="#" />
           </Box>
         </FlexBox>
@@ -260,9 +264,9 @@ const Home = () => {
           sx={{
             placeItems: 'center'
           }}        >
-          <Typography variant='h3' width="480px" textAlign="center" >
+          <ResponsiveTypography  variant='h3' width="480px" textAlign="center" >
             <Box component="span" color="primary.main" >Key Benefits</Box> That Keep Your Projects and Cash Flow on Track
-          </Typography>
+          </ResponsiveTypography >
         </Box>
         <Box sx={{
           pt: 4
@@ -296,23 +300,23 @@ const Home = () => {
         mt: 3,
         mb: 7
       }} >
-        <Typography variant='h2' >
+        <ResponsiveTypography  variant='h2' >
           One Platform, Every Stage of Your Build
-        </Typography>
-        <Typography variant='h3' sx={{
+        </ResponsiveTypography >
+        <ResponsiveTypography  variant='h3' sx={{
           py: 1
         }} >
           Construction moves fast, and paperwork slows you down.
-        </Typography>
-        <Typography variant='h5'
+        </ResponsiveTypography >
+        <ResponsiveTypography  variant='h5'
+            width= "850px"
           sx={{
             display: 'block',
-            width: "860px",
             placeSelf: "center"
           }}
         >
           BillEasy ties estimates, contracts, schedules, invoices, and audits into one connected system built for Canadian rules and real jobsite demands. The result? Less chasing, fewer delays, and more time building.
-        </Typography>
+        </ResponsiveTypography >
         <FlexBox sx={{
           justifyContent: "center",
           py: 5
@@ -347,7 +351,8 @@ const Home = () => {
           </Button>
           <Box>
             <Box>
-              <Typography
+              <ResponsiveTypography 
+              variant='h5'
                 sx={{
                   display: "flex",
                   gap: 2,
@@ -362,45 +367,47 @@ const Home = () => {
                 // }} 
                 />
                 Watch How It Works
-              </Typography>
+              </ResponsiveTypography >
             </Box>
           </Box>
         </FlexBox>
       </FlexBox>
-      <Box>
+      <FlexBox sx={{
+        display:"block"
+      }}>
         <Box
           sx={{
             textAlign: "center"
           }}
         >
-          <Typography
+          <ResponsiveTypography 
             variant='h3'
             color="primary.main"
+            width= "280px"
             sx={{
               background: "#F2F9FF",
               borderRadius: 9,
-              width: "280px",
               p: "10px 10px",
               placeSelf: "center"
             }} >
             The Bill Easy Difference:
-          </Typography>
-          <Typography variant='h2'sx={{
+          </ResponsiveTypography >
+          <ResponsiveTypography  variant='h2'sx={{
             py:2
           }} >
             A Flow that Matches the <Box component="span" color="primary.main" >Jobsite</Box>
-          </Typography>
-          <Typography
+          </ResponsiveTypography >
+          <ResponsiveTypography 
+            width= "800px"
             variant='h5'
             sx={{
-              width: "840px",
               placeSelf: "center"
             }} >
             Construction projects move through predictable stages. BillEasy mirrors that flow. The result is less double-entry, fewer mistakes, and clearer accountability across teams. Here is how the workflow keeps your business tight.
 
-          </Typography>
+          </ResponsiveTypography >
         </Box>
-      </Box>
+      </FlexBox>
 
     </Box>
   )

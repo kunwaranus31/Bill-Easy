@@ -23,7 +23,7 @@ let theme = createTheme({
         },
         h5: {
             fontFamily: "Satoshi",
-            fontSize: "1.1rem",
+            fontSize: "1.2rem",
             fontWeight: 300,
         },
         body: {

@@ -11,7 +11,7 @@ const GradientButton = ({buttonText, btnlink}) => {
             component={Link}
             to={btnlink}
             sx={{
-                background: "linear-gradient(to right, #073E7A, #0C71E0)",
+                background: "linear-gradient(to bottom, #0C71E0 , #073E7A)",
                 my:3
             }}
             endIcon={
