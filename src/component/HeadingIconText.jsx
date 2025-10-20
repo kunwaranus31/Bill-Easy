@@ -9,7 +9,7 @@ const HeadingIconText = ({items,containerWidth }) => {
 
                 justifyContent: "space-between",
                 gap: 4,
-                px:0
+                // px:0
             }} >
             {
                 items.map((item, index) => (
