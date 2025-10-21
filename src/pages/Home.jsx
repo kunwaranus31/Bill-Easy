@@ -1,4 +1,4 @@
-import { Box, Button } from '@mui/material'
+import { Box, Button, Typography } from '@mui/material'
 import React from 'react'
 import { bannerLaptop, bannerLogo1, bannerLogo2, bannerLogo3, bannerLogo4, bannerLogo5, bannerLogo6, bannerLogo7, benifitImg1, benifitImg2, benifitImg3, benifitImg4, benifitImg5, blueBg, box1, box2, box3, box4, box5, boxImg1, boxImg2, boxImg3, boxImg4, boxImg5, controlIcon1, controlIcon2, controlIcon3, homeBanner, industries1, industries2, industries3, IndustriesBg, powerfullImg1, powerfullImg2, powerfullImg3, powerfullImg4, powerfullImg5 } from '../assets'
 import { BoxBg, FlexBox, ImageTextBox, JobsiteBox, ResponsiveTypography } from '../component'
@@ -9,6 +9,9 @@ import GradientButton from '../component/GradientButton';
 import HeadingIconText from '../component/HeadingIconText';
 import IconHeadingText from '../component/IconHeadingText';
 import StickyWrapper from '../component/StickyWrapper';
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import { Link } from 'react-router-dom';
+
 
 const Home = () => {
 
@@ -442,7 +445,7 @@ const Home = () => {
           alignItems: "stretch",
           py: 7,
           justifyContent: "center",
-          mt:9
+          mt: 9
         }}>
         <Box
           sx={{
@@ -576,6 +579,120 @@ const Home = () => {
         </Box>
       </FlexBox>
 
+      <Box
+        sx={{
+          backgroundColor: "#F2F9FF",
+          py: 9
+        }}>
+        <FlexBox
+          sx={{
+            display: "block"
+          }}>
+          <Typography
+            variant='h2'
+            color="primary.main"
+          >
+            Success Stories
+          </Typography>
+
+
+          <ResponsiveTypography
+            variant='h3'
+            width="900px"
+            pt="10px"
+          >
+            Discover how businesses like yours are simplifying invoicing, boosting efficiency, and accelerating growth with BillEasy.
+          </ResponsiveTypography>
+
+
+        </FlexBox>
+      </Box>
+      <FlexBox
+        sx={{
+          display: "block",
+          backgroundImage: `url(${blueBg})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          py: 6,
+          borderRadius: 5,
+          textAlign: "center",
+          color: "#fff",
+          mt: 3,
+          mb: 7
+        }}>
+        <ResponsiveTypography
+          variant="h2">
+          Stop running your business on scattered files.
+        </ResponsiveTypography>
+        <ResponsiveTypography
+          variant="h5"
+          width="920px"
+          sx={{
+            placeSelf: "center",
+            py: 2
+          }}
+        >
+          BillEasy gives Canadian contractors one platform for estimates, contracts, scheduling, invoicing, and audit-ready reporting. Protect your margins, shorten payment cycles, and keep every job on the right track.
+        </ResponsiveTypography>
+        <ResponsiveTypography
+          variant="h3"
+          width="750px"
+          sx={{
+            placeSelf: "center",
+
+          }}>
+          Plans start at just $99/month. Book a demo today or request beta access to try the platform on a real job.
+        </ResponsiveTypography>
+        <FlexBox sx={{
+          justifyContent: "center",
+          pt: 5
+        }} >
+          <Button
+            variant="contained"
+            sx={{
+              background: "#fff",
+              color: "primary.main"
+            }}
+            endIcon={
+              <Box
+                sx={{
+                  width: 30,
+                  height: 30,
+                  borderRadius: "40px",
+                  bgcolor: "primary.main",
+                  display: "grid",
+                  placeItems: "Center",
+                  ml: 1
+                }}
+              >
+                <EastIcon
+                  sx={{
+                    color: "#fff",
+                    width: "15px"
+                  }}
+                />
+              </Box>
+            }>
+            Book a Demo
+          </Button>
+          <Button
+            variant="text"
+            component={Link}
+            to="#"
+            endIcon={<ChevronRightIcon />}
+
+            sx={{
+              p: 0,
+              color: "#fff",
+              "&:hover": {
+                background: "none"
+              }
+            }}
+          >
+            Request beta access
+          </Button>
+        </FlexBox>
+      </FlexBox>
     </Box>
   )
 }
