@@ -1,14 +1,11 @@
-import { Box, Button, Typography } from '@mui/material'
+import { Box, Button, Grid, Typography } from '@mui/material'
 import React from 'react'
-import { bannerLaptop, bannerLogo1, bannerLogo2, bannerLogo3, bannerLogo4, bannerLogo5, bannerLogo6, bannerLogo7, benifitImg1, benifitImg2, benifitImg3, benifitImg4, benifitImg5, blueBg, box1, box2, box3, box4, box5, boxImg1, boxImg2, boxImg3, boxImg4, boxImg5, controlIcon1, controlIcon2, controlIcon3, homeBanner, industries1, industries2, industries3, IndustriesBg, powerfullImg1, powerfullImg2, powerfullImg3, powerfullImg4, powerfullImg5 } from '../assets'
-import { BoxBg, FlexBox, ImageTextBox, JobsiteBox, ResponsiveTypography } from '../component'
+import { bannerLaptop, bannerLogo1, bannerLogo2, bannerLogo3, bannerLogo4, bannerLogo5, bannerLogo6, bannerLogo7, benifitImg1, benifitImg2, benifitImg3, benifitImg4, benifitImg5, blueBg, box1, box2, box3, box4, box5, boxImg1, boxImg2, boxImg3, boxImg4, boxImg5, controlIcon1, controlIcon2, controlIcon3, homeBanner, industries1, industries2, industries3, IndustriesBg, invoicingBg, powerfullImg1, powerfullImg2, powerfullImg3, powerfullImg4, powerfullImg5, review1, review2, review3, videoImg } from '../assets'
+
+import { BoxBg, Faq, FlexBox, GradientButton, HeadingIconText, IconHeadingText, ImageTextBox, JobsiteBox, ResponsiveTypography, StickyWrapper, IconText, ReviewCarousel } from '../component'
+
 import EastIcon from '@mui/icons-material/East';
 import PlayCircleIcon from '@mui/icons-material/PlayCircle';
-import IconText from '../component/IconText';
-import GradientButton from '../component/GradientButton';
-import HeadingIconText from '../component/HeadingIconText';
-import IconHeadingText from '../component/IconHeadingText';
-import StickyWrapper from '../component/StickyWrapper';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { Link } from 'react-router-dom';
 
@@ -600,13 +597,241 @@ const Home = () => {
             variant='h3'
             width="900px"
             pt="10px"
+            pb="30px"
           >
             Discover how businesses like yours are simplifying invoicing, boosting efficiency, and accelerating growth with BillEasy.
           </ResponsiveTypography>
 
-
+          <ReviewCarousel reviews={[
+            {
+              image:review1,
+              text:"BillEasy has streamlined our entire billing process.",
+              quote:"We used to spend hours each week chasing invoices. Now, everything is automated—our team gets paid faster and with zero confusion.",
+              name:"Jason M.",
+              role:"Construction Project Manager"
+            },
+            {
+              text:"BillEasy has streamlined our entire billing process.",
+              quote:"We used to spend hours each week chasing invoices. Now, everything is automated—our team gets paid faster and with zero confusion.",
+              name:"Jason M.",
+              role:"Construction Project Manager"
+            },
+            {
+              image:review2,
+              text:"Payments are faster and more transparent.",
+              quote:"Our clients appreciate the clear, milestone-based invoicing. It builds trust and keeps cash flow healthy.",
+              name:"Emily W.",
+              role:"Developer & Builder"
+            },
+            {
+              image:review3,
+              text:"Managing multiple projects has never been easier.",
+              quote:"BillEasy gives us the clarity we need to track progress, budgets, and milestones across all developments in real time.",
+              name:"Sophia L.",
+              role:"Real Estate Developer"
+            },
+            
+          ]} />
         </FlexBox>
       </Box>
+
+      <FlexBox
+        sx={{
+          display: "block",
+          py: 7
+        }}>
+        <Box
+          sx={{
+            textAlign: "center",
+            mx: "auto",
+            width: "100%",
+            pb: 3
+          }}>
+          <ResponsiveTypography
+            variant="h2">
+            Frequently Asked <Box component="span" color="primary.main" >Questions</Box>
+          </ResponsiveTypography>
+          <ResponsiveTypography
+            variant="h5"
+            width="570px"
+            pt="10px"
+            mx="auto">
+            Got questions? We’ve got answers. Here’s everything you need to know about using Bill Easy.
+          </ResponsiveTypography>
+        </Box>
+        <Grid container spacing={{ xs: 0, md: 7 }}
+        >
+          <Grid size={{ xs: 12, md: 6 }}>
+            <Faq items={[
+              {
+                question: "What is construction management software, and how does it work?",
+                answer: "Software that organizes projects, budgets, and invoices in one place. BillEasy adds construction-specific features like holdbacks and milestone billing so the platform fits the real workflow. It is also considered one of the best software for construction in Canada."
+              },
+              {
+                question: "How is BillEasy different from general project tools?",
+                answer: "BillEasy models the construction lifecycle from estimate to audit. The platform includes finance controls, contract versioning, and export tools aligned to Canadian practice."
+              },
+              {
+                question: "How can construction management software help me save time and reduce project delays?",
+                answer: "BillEasy keeps everything in one place, so you’re not juggling spreadsheets or hunting through emails. Estimates automatically become contracts, schedules update in real time, and invoices connect directly to budgets. That means fewer mistakes, faster approvals, and projects that stay on track across Canada."
+              },
+              {
+                question: "Does this software support project scheduling and real-time progress tracking?",
+                answer: "Yes. You can create detailed schedules, assign crews, set milestones, and see live updates from the field. Progress is tracked alongside your budget, so you always know exactly where each project stands."
+              },
+              {
+                question: "Can I manage budgets, costs, and invoices with this software?",
+                answer: "Absolutely. BillEasy is built with finances first. Budgets, actual costs, purchase orders, and invoices are all visible in one dashboard, helping you catch overruns early and protect your margins."
+              },
+              {
+                question: "Does BillEasy handle holdbacks and provincial rules?",
+                answer: "Yes. You can set up holdbacks for each project and generate reports that follow provincial regulations. BillEasy ensures your financials comply with CRA requirements and construction industry standards across Canada."
+              },
+              {
+                question: "Is the software cloud-based, and can I access it from anywhere on-site or in the office?",
+                answer: "Yes. Being cloud-based means you can log in securely from the office, your home, or directly on the jobsite. All you need is an internet connection, and your team can access up-to-date project info anytime."
+              },
+              {
+                question: "Does it integrate with accounting tools like QuickBooks, Xero, or other financial software?",
+                answer: "Not at the moment. Integrations with third-party accounting tools are on the roadmap, but today BillEasy focuses on giving contractors a strong all-in-one platform of its own."
+              },
+              {
+                question: "Can subcontractors and field workers easily use the software without advanced technical skills?",
+                answer: "Definitely. BillEasy uses role-based dashboards so each team member sees only what they need, be it their daily logs, photos, or approvals. It’s designed to be intuitive for crews of any tech experience level."
+              },
+
+            ]} />
+          </Grid>
+          <Grid size={{ xs: 12, md: 6 }}>
+            <Faq items={[
+
+              {
+                question: "How secure is the data stored in the system, and is it backed up automatically?",
+                answer: "BillEasy prioritizes security. The two-factor authentication, audit trails, and encrypted cloud storage, helps keep your data stays safe. Automatic backups ensure you never lose critical project information."
+              },
+              {
+                question: "Does the software allow document sharing, blueprint storage, and version control?",
+                answer: "Yes. All your contracts, drawings, permits, and site photos live in one secure space. The latest version is always at the top, so your team is working with the most current documents."
+              },
+              {
+                question: "Can I generate custom reports for clients, budgets, and compliance purposes?",
+                answer: "Absolutely. You can create WIP reports, profit analyses, and compliance exports that are fully customizable. Reports can be shared in PDF or CSV formats for accountants, lenders, or clients."
+              },
+              {
+                question: "How flexible is the software in handling multi-project management at the same time?",
+                answer: "Very flexible. BillEasy is made for contractors managing multiple jobs. You can track budgets, schedules, and invoices for all your sites in one place while keeping each project organized and on track."
+              },
+              {
+                question: "Can I export data for my accountant?",
+                answer: "Yes. Export your project financials in CSV or PDF, along with detailed audit trails, making it simple to share everything with your accountant or lender."
+              },
+              {
+                question: "Is there a mobile app for field crews?",
+                answer: "BillEasy can be accessed from any device through its cloud platform. While there isn’t a dedicated mobile app yet, crews can log in from phones or tablets on-site to update tasks and upload reports."
+              },
+              {
+                question: "What kind of customer support and training does the software provider offer?",
+                answer: "BillEasy provides Canadian-based onboarding specialists to help set up your first projects, import data, and train your team. Ongoing support is available through helpful articles, ticketing, and direct access to our support team whenever you need it."
+              },
+              {
+                question: "What is the pricing model subscription, one-time payment, or per-user license?",
+                answer: "BillEasy is offered as a monthly subscription. Plans starting at just $99/month."
+              },
+              {
+                question: "How do I get started?",
+                answer: "Book a demo and speak to a Canadian onboarding specialist who will help import your data and set up your first projects using builder software tools."
+              },
+            ]} />
+          </Grid>
+        </Grid>
+      </FlexBox>
+
+      <FlexBox
+        sx={{
+          backgroundImage: `url(${invoicingBg})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          position: "relative",
+          overflow: "hidden",
+          py: 4,
+          px: 7,
+          borderRadius: 5,
+          display: "block",
+          mb: 8
+        }}>
+        <Box
+          sx={{
+            mx: "auto",
+            textAlign: "center"
+          }}>
+          <ResponsiveTypography
+            variant="h2">
+            Explore Our <Box component="span" color="primary.main" >Construction Invoicing </Box>Software
+          </ResponsiveTypography>
+          <ResponsiveTypography
+            variant="h5"
+            width="800px"
+            mx="auto"
+            pt="10px">
+            Invoicing sits at the heart of construction finance. BillEasy lets you issue branded invoices, link them to milestones and expenses, and track payment status in a single view. Holdbacks are calculated and tracked per provincial rules.
+          </ResponsiveTypography>
+        </Box>
+        <FlexBox sx={{
+          px: 0,
+          pt: 4
+        }}>
+          <Box>
+            <ResponsiveTypography
+              variant="h2">
+              Want to see invoicing in action?
+            </ResponsiveTypography>
+            <ResponsiveTypography
+              variant="h3"
+              width="580px"
+              pt="20px">
+              <Typography
+                component={Link}
+                to="#"
+                variant='h3'
+                color='primary.main'
+              >
+                Request a demo</Typography> and we’ll walk through a sample project from estimate to paid invoice using construction billing software.
+            </ResponsiveTypography>
+            <FlexBox sx={{
+              px: 0,
+            }} >
+              <GradientButton buttonText="Request a Free Demo" btnlink="#" />
+              <Button
+                variant="text"
+                component={Link}
+                to="#"
+                endIcon={<EastIcon />}
+
+                sx={{
+                  p: 0,
+                  color: "primary.main",
+                  "&:hover": {
+                    background: "none"
+                  }
+                }}
+              >
+                Join Our Free Beta
+              </Button>
+            </FlexBox>
+          </Box>
+          <Box>
+            <Box
+              component="img"
+              src={videoImg}
+              width="100%"
+            />
+          </Box>
+        </FlexBox>
+      </FlexBox>
+
+
+
+
       <FlexBox
         sx={{
           display: "block",
