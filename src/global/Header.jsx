@@ -1,5 +1,5 @@
 import { Box, Drawer, IconButton, List, ListItem, ListItemButton, ListItemText, Typography } from "@mui/material";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { FeaturesMegaMenu, FlexBox } from "../component";
 import { logo } from "../assets";
 import { Link, useLocation } from "react-router-dom";
@@ -10,6 +10,7 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 const Header = () => {
   const [open, setOpen] = useState(false);
   const [hoverMenu, setHoverMenu] = useState(null);
+  const hoverTimeoutRef = useRef(null);
 
   const location = useLocation()
 
@@ -21,6 +22,17 @@ const Header = () => {
     { name: "Industries", link: "#" },
     { name: "Resources", link: "#" },
   ];
+
+  const handleMouseEnter = (name) => {
+    clearTimeout(hoverTimeoutRef.current);
+    setHoverMenu(name);
+  };
+
+  const handleMouseLeave = () => {
+    hoverTimeoutRef.current = setTimeout(() => {
+      setHoverMenu(null);
+    }, 200); // 200ms delay
+  };
 
   return (
     <Box component="header">
@@ -69,8 +81,8 @@ const Header = () => {
             {navItems.map((item) => (
               <li
                 key={item.name}
-                onMouseEnter={() => item.hasMegaMenu && setHoverMenu(item.name)}
-                onMouseLeave={() => setHoverMenu(null)}
+                onMouseEnter={() => item.hasMegaMenu && handleMouseEnter(item.name)}
+                onMouseLeave={() => item.hasMegaMenu && handleMouseLeave()}
                 sx={{ position: "relative" }}
               >
                 <Link to={item.link}>
@@ -99,9 +111,10 @@ const Header = () => {
                       left: 0,
                       right: 0,
                       width: "100%",
-                      color:"inherit",
+                      color:"initial",
                       backgroundColor: "#fff", 
                       zIndex: 1000,
+                      boxShadow: "0 8px 16px rgba(0,0,0,0.1)",
                       animation: "slideDown 0.3s ease-in-out",
                       "@keyframes slideDown": {
                         from: {
@@ -114,8 +127,8 @@ const Header = () => {
                         },
                       },
                     }}
-                    onMouseEnter={() => setHoverMenu(item.name)}
-                    onMouseLeave={() => setHoverMenu(null)}
+                    onMouseEnter={() => handleMouseEnter(item.name)}
+                    onMouseLeave={() => handleMouseLeave()}
                   >
                     {item.name === "Features" && <FeaturesMegaMenu />}
                   </Box>

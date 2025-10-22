@@ -43,3 +43,25 @@ export { default as review1 } from './review1.png';
 export { default as review2 } from './review2.png';
 export { default as review3 } from './review3.png';
 export { default as featuresImg } from './featuresImg.png';
+export { default as financialBg2 } from './financialBg2.webp';
+export { default as financialImg2 } from './financialImg2.png';
+export { default as financialImg3 } from './financialImg3.png';
+export { default as buildTextImg } from './buildTextImg.png';
+export { default as buildArrow } from './buildArrow.png';
+export { default as financialIcon1 } from './financialIcon1.png';
+export { default as financialIcon2 } from './financialIcon2.png';
+export { default as financialIcon3 } from './financialIcon3.png';
+export { default as financialIcon4 } from './financialIcon4.png';
+export { default as financialImg4 } from './financialImg4.png';
+export { default as contractorsBoxImg } from './contractorsBoxImg.jpg';
+export { default as financialAutomationImg1 } from './financialAutomationImg1.png';
+export { default as financialAutomationImg2 } from './financialAutomationImg2.png';
+export { default as financialAutomationImg3 } from './financialAutomationImg3.png';
+export { default as iconImg1 } from './iconImg1.png';
+export { default as iconImg2 } from './iconImg2.png';
+export { default as iconImg3 } from './iconImg3.png';
+
+
+
+export { default as checkIcon } from './checkIcon.png';
+export { default as innerpageBanner } from './innerpageBanner.jpg';

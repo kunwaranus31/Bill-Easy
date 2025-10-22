@@ -27,7 +27,7 @@ let theme = createTheme({
             fontWeight: 300,
         },
         body: {
-            fontFamily: "Satoshi",
+            fontFamily: "Satoshi-Regular",
             fontSize: "1rem",
         },
         

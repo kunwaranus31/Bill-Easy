@@ -10,6 +10,10 @@ export { default as IconText } from './IconText';
 export { default as GradientButton } from './GradientButton';
 export { default as Faq } from './Faq';
 export { default as ReviewCarousel } from './ReviewCarousel';
+export { default as TextBg } from './TextBg';
+export { default as CheckIconHeading } from './CheckIconHeading';
+export { default as TextImage } from './TextImage';
+export { default as HoverTextBox } from './HoverTextBox';
 
 export { default as ServicesMegaMenu } from './MegaMenus/ServicesMegaMenu';
 export { default as FeaturesMegaMenu } from './MegaMenus/FeaturesMegaMenu';

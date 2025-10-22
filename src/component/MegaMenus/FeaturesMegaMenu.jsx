@@ -10,6 +10,7 @@ import EastIcon from '@mui/icons-material/East';
 const FeaturesMegaMenu = () => {
 
     const financialItems = [
+        { name: "Construction Financial Management", link: "/construction-financial-management" },
         { name: "Construction Accounting Management.", link: "/" },
         { name: "Construction Budget Management.", link: "/" },
         { name: "Construction Financial Audit Management.", link: "/" },
@@ -230,8 +231,8 @@ const FeaturesMegaMenu = () => {
                             endIcon={<EastIcon />}
 
                             sx={{
-                                p: 0,
                                 color: "primary.main",
+                                p: 0,
                                 "&:hover": {
                                     background: "none"
                                 }

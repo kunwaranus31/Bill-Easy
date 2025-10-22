@@ -363,10 +363,6 @@ const Home = () => {
               >
                 <PlayCircleIcon
                   fontSize="large"
-                // sx={{
-                //   weight:"50px",
-                //   height:"50px"
-                // }} 
                 />
                 Watch How It Works
               </ResponsiveTypography >
