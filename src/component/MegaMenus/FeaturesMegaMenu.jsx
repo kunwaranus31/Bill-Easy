@@ -41,14 +41,15 @@ const FeaturesMegaMenu = () => {
             <FlexBox
                 sx={{
                     alignItems: "flex-start",
-                    background: "rgb(248 248 248 / 80%)",
+                    background: "#fff",
+                    boxShadow: "0 8px 16px rgba(0,0,0,0.1)",
                     py: 5,
                     borderRadius: "0px 0px 20px 20px",
                     border: "1px solid",
-                    borderTop:"none",
-                    borderColor:"primary.main",
-                    gap:0,
-                    justifyContent:"space-between"
+                    borderTop: "none",
+                    borderColor: "primary.main",
+                    gap: 0,
+                    justifyContent: "space-between"
                 }}>
                 <Box>
                     <Typography
@@ -184,7 +185,7 @@ const FeaturesMegaMenu = () => {
                 <Box
                     sx={{
                         background: "#fff",
-                        border: "1px solid",
+                        border: "2px solid",
                         borderRadius: 5,
                         borderColor: "#F2F9FF",
                         px: 3,

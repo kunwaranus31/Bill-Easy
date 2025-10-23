@@ -1,6 +1,6 @@
 import { Box, Drawer, IconButton, List, ListItem, ListItemButton, ListItemText, Typography } from "@mui/material";
 import React, { useState, useRef } from "react";
-import { FeaturesMegaMenu, FlexBox } from "../component";
+import { FeaturesMegaMenu, FlexBox, ServicesMegaMenu } from "../component";
 import { logo } from "../assets";
 import { Link, useLocation } from "react-router-dom";
 import GradientButton from "../component/GradientButton";
@@ -12,26 +12,28 @@ const Header = () => {
   const [hoverMenu, setHoverMenu] = useState(null);
   const hoverTimeoutRef = useRef(null);
 
-  const location = useLocation()
+  const location = useLocation();
 
   const navItems = [
     { name: "Home", link: "/" },
-    { name: "Sercvices", link: "#" },
+    { name: "Services", link: "#", hasMegaMenu: true },
     { name: "Features", link: "#", hasMegaMenu: true },
-    { name: "Benifits", link: "#" },
+    { name: "Benefits", link: "#" },
     { name: "Industries", link: "#" },
     { name: "Resources", link: "#" },
   ];
 
+  // Handle mouse enter event to show the menu
   const handleMouseEnter = (name) => {
     clearTimeout(hoverTimeoutRef.current);
-    setHoverMenu(name);
+    setHoverMenu(name); // Set the active menu
   };
 
+  // Handle mouse leave event to hide the menu after delay
   const handleMouseLeave = () => {
     hoverTimeoutRef.current = setTimeout(() => {
-      setHoverMenu(null);
-    }, 200); // 200ms delay
+      setHoverMenu(null); // Reset hover state after delay
+    }, 200); // 200ms delay before hiding the menu
   };
 
   return (
@@ -102,19 +104,18 @@ const Header = () => {
                   </Box>
                 </Link>
 
-                {/* Mega Menu */}
-                {item.hasMegaMenu && hoverMenu === item.name && (
+                {/* Mega Menu for Features */}
+                {item.hasMegaMenu && hoverMenu === item.name && item.name === "Features" && (
                   <Box
                     sx={{
-                      position: "fixed", 
-                      top: "100px", 
+                      position: "fixed",
+                      top: "100px",
                       left: 0,
                       right: 0,
                       width: "100%",
-                      color:"initial",
-                      backgroundColor: "#fff", 
+                      // backgroundColor: "#fff",
                       zIndex: 1000,
-                      boxShadow: "0 8px 16px rgba(0,0,0,0.1)",
+                      color:"#000",
                       animation: "slideDown 0.3s ease-in-out",
                       "@keyframes slideDown": {
                         from: {
@@ -127,10 +128,38 @@ const Header = () => {
                         },
                       },
                     }}
-                    onMouseEnter={() => handleMouseEnter(item.name)}
-                    onMouseLeave={() => handleMouseLeave()}
                   >
-                    {item.name === "Features" && <FeaturesMegaMenu />}
+                    <FeaturesMegaMenu />
+                  </Box>
+                )}
+
+                {/* Mega Menu for Services */}
+                {item.hasMegaMenu && hoverMenu === item.name && item.name === "Services" && (
+                  <Box
+                    sx={{
+                      position: "fixed",
+                      top: "100px",
+                      left: 0,
+                      right: 0,
+                      width: "100%",
+                      color:"#000",
+                      // backgroundColor: "#fff",
+                      zIndex: 1000,
+                      // boxShadow: "0 8px 16px rgba(0,0,0,0.1)",
+                      animation: "slideDown 0.3s ease-in-out",
+                      "@keyframes slideDown": {
+                        from: {
+                          opacity: 0,
+                          transform: "translateY(-10px)",
+                        },
+                        to: {
+                          opacity: 1,
+                          transform: "translateY(0)",
+                        },
+                      },
+                    }}
+                  >
+                    <ServicesMegaMenu />
                   </Box>
                 )}
               </li>
@@ -143,12 +172,7 @@ const Header = () => {
             display: { xs: "none", md: "block" },
           }}
         >
-          <FlexBox
-            sx={{
-              p: 0,
-              m: 0,
-            }}
-          >
+          <FlexBox sx={{ p: 0, m: 0 }}>
             <Link to="#" color="primary.main">
               <Typography variant="body" color="primary.main">
                 Request a Demo
@@ -159,13 +183,7 @@ const Header = () => {
         </Box>
 
         {/* Mobile hamburger */}
-
-        <IconButton
-          onClick={() => setOpen(true)}
-          sx={{
-            display: { xs: "inline-flex", md: "none" },
-          }}
-        >
+        <IconButton onClick={() => setOpen(true)} sx={{ display: { xs: "inline-flex", md: "none" } }}>
           <MenuIcon />
         </IconButton>
       </Box>
@@ -180,17 +198,10 @@ const Header = () => {
           sx: { width: 320, maxWidth: "100vw", pt: "env(safe-area-inset-top)" },
         }}
       >
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            gap: 1.5,
-            p: 2,
-            pt: 3
-          }}>
+        <Box sx={{ display: "flex", flexDirection: "column", gap: 1.5, p: 2, pt: 3 }}>
           <List>
-            {navItems.map((item) =>
-              <ListItem key={item.name} disablePadding >
+            {navItems.map((item) => (
+              <ListItem key={item.name} disablePadding>
                 <ListItemButton
                   onClick={() => setOpen(false)}
                   component={Link}
@@ -203,11 +214,11 @@ const Header = () => {
                   <ListItemText primary={item.name} />
                 </ListItemButton>
               </ListItem>
-            )}
+            ))}
           </List>
-
         </Box>
       </Drawer>
+
     </Box>
   );
 };
